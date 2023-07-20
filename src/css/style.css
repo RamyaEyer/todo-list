@@ -1,0 +1,42 @@
+#content{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-title{
+
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+
+.add-project{
+
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    align-self: center;
+
+}
+
+.projects{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+
+#item-entry{
+
+    display:  flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 50%;
+    padding-bottom: 5%;
+
+}
+
