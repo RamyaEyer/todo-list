@@ -1,5 +1,6 @@
 import { addItemButton } from "./items";
 import { placeItem } from "./inputForm";
+import { addEditButton, editText} from "./edit";
 
 const content = document.getElementsByTagName("content");
 
@@ -9,6 +10,7 @@ const addTitle = () => {
     const mainTitle = document.createElement('div');
     mainTitle.classList.add('main-title');
     mainTitle.textContent = 'To-Do List';
+    mainTitle.appendChild(addEditButton(mainTitle));
     content.appendChild(mainTitle);
 
 };
