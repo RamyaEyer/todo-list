@@ -9,7 +9,6 @@ const itemFactory = (title, description, dueDate, priority) => {
 const placeItem = (project) => {
 
     let formDiv = document.createElement('div');
-    //formDiv.textContent = "FORM";
     project.appendChild(createForm(project));
 
 

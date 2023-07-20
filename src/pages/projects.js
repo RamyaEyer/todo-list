@@ -24,7 +24,6 @@ const addProjectButton = () =>{
     projectButton.textContent = "+";
     content.appendChild(projectButton);
 
-
 };
 
 const createProjectsDiv = () => {
@@ -44,13 +43,14 @@ const createProject = () => {
 
     const projectTitle = document.createElement('div');
     projectTitle.textContent = "Project";
+    projectTitle.appendChild(addEditButton(projectTitle));
+
 
     project.appendChild(projectTitle);
     project.appendChild(addItemButton(project));
     projectDivs.appendChild(project);
     content.appendChild(projectDivs);
 
-   
 
 }
 

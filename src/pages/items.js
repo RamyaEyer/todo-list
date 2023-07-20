@@ -1,7 +1,7 @@
 import { placeItem } from "./inputForm";
 import { addEditButton } from "./edit";
 
-const itemList  = [];
+const itemList = [];
 
 const addItemButton = (project) => {
 
@@ -23,12 +23,11 @@ const createItemCard = (project) =>  {
     let lastIndex = itemList.length - 1;
 
     const itemCard = document.createElement('div');
-
+    
     const itemDiv0 = document.createElement('div');
     const itemDiv1 = document.createElement('div');
     const itemDiv2 = document.createElement('div');
     const itemDiv3 = document.createElement('div');
-
 
     itemDiv0.textContent = itemList[lastIndex].title.value;
     itemDiv1.textContent = itemList[lastIndex].description.value;
