@@ -1,4 +1,4 @@
-import { itemList, createItemCard } from "./items"; 
+import { itemList, createItemCard, createItemsDiv, clearItems} from "./items"; 
 
 const itemFactory = (title, description, dueDate, priority) => {
 
@@ -83,7 +83,8 @@ const createForm = (project) => {
         event.preventDefault(); //Stop Form Submission
         itemList.push(itemFactory(titleInput, descInput, dueInput, priorityInput));
         project.removeChild(inputForm);
-        project.appendChild(createItemCard(project));
+        clearItems();
+        project.appendChild(createItemsDiv());
 
     });
 

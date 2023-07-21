@@ -18,9 +18,31 @@ const addItemButton = (project) => {
 
 };
 
-const createItemCard = (project) =>  {
+const clearItems = () => {
 
-    let lastIndex = itemList.length - 1;
+    
+
+};
+
+const createItemsDiv = () => {
+
+    const itemsDiv = document.createElement('div');
+    itemsDiv.classList.add('items-list');
+
+    for(i = 0; i < itemList.length; i++){
+
+        itemsDiv.appendChild(createItemCard(i));
+
+    }
+
+    return itemsDiv;
+
+
+};
+
+const createItemCard = (lastIndex) =>  {
+
+    //let lastIndex = itemList.length - 1;
 
     const itemCard = document.createElement('div');
     
@@ -51,4 +73,4 @@ const createItemCard = (project) =>  {
 };
 
 
-export {addItemButton, itemList, createItemCard};
+export {addItemButton, itemList, createItemsDiv, createItemCard, clearItems};
