@@ -1,6 +1,6 @@
 import { itemList } from "./items";
 
-const adjustItemOrder = () =>{
+const adjustItemOrder = () => {
 
     const comparedNums = itemList.length - 2;
     const newIndex = itemList.length - 1;
@@ -17,6 +17,7 @@ const adjustItemOrder = () =>{
             }
 
         }
+
 
     }
 

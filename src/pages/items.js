@@ -29,7 +29,7 @@ const createItemsDiv = () => {
     const itemsDiv = document.createElement('div');
     itemsDiv.classList.add('items-list');
 
-    for(i = 0; i < itemList.length; i++){
+    for(let i = 0; i < itemList.length; i++){
 
         itemsDiv.appendChild(createItemCard(i));
 
