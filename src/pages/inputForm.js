@@ -83,7 +83,7 @@ const createForm = (project) => {
         event.preventDefault(); //Stop Form Submission
         itemList.push(itemFactory(titleInput, descInput, dueInput, priorityInput));
         project.removeChild(inputForm);
-        clearItems();
+        clearItems(project);
         project.appendChild(createItemsDiv());
 
     });

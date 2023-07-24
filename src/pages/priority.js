@@ -7,7 +7,7 @@ const adjustItemOrder = () => {
 
     if (itemList.length > 1){
 
-        for(i = 0; i < comparedNums ; i++){
+        for(let i = 0; i < comparedNums ; i++){
 
             if(itemList[i].priority.value >= itemList[newIndex].priority.value){
 

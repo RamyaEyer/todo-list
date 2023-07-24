@@ -17,11 +17,14 @@ const addItemButton = (project) => {
     return itemButton;
 
 };
+const clearItems = (project) => {
 
-const clearItems = () => {
+    if(project.querySelector('.items-list') != null){
 
-    
+        project.removeChild(project.querySelector('.items-list'));
 
+    }
+   
 };
 
 const createItemsDiv = () => {
@@ -57,9 +60,9 @@ const createItemCard = (lastIndex) =>  {
     itemDiv3.textContent = itemList[lastIndex].priority.value;
 
     itemDiv0.appendChild(addEditButton(itemDiv0));
-    itemDiv1.appendChild(addEditButton(itemDiv0));
-    itemDiv2.appendChild(addEditButton(itemDiv0));
-    itemDiv3.appendChild(addEditButton(itemDiv0));
+    itemDiv1.appendChild(addEditButton(itemDiv1));
+    itemDiv2.appendChild(addEditButton(itemDiv2));
+    itemDiv3.appendChild(addEditButton(itemDiv3));
 
 
     itemCard.appendChild(itemDiv0);
