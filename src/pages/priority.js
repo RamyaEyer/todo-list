@@ -1,13 +1,13 @@
 import { itemList } from "./items";
 
+
 const adjustItemOrder = () => {
 
-    const comparedNums = itemList.length - 2;
     const newIndex = itemList.length - 1;
 
     if (itemList.length > 1){
 
-        for(let i = 0; i < comparedNums ; i++){
+        for(let i = 0; i < itemList.length ; i++){
 
             if(itemList[i].priority.value >= itemList[newIndex].priority.value){
 
@@ -17,7 +17,6 @@ const adjustItemOrder = () => {
             }
 
         }
-
 
     }
 

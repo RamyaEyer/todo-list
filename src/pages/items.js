@@ -1,5 +1,6 @@
 import { placeItem } from "./inputForm";
 import { addEditButton } from "./edit";
+import { adjustItemOrder } from "./priority";
 
 const itemList = [];
 
@@ -31,6 +32,8 @@ const createItemsDiv = () => {
 
     const itemsDiv = document.createElement('div');
     itemsDiv.classList.add('items-list');
+
+    adjustItemOrder();
 
     for(let i = 0; i < itemList.length; i++){
 
