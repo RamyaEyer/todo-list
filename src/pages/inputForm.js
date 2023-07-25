@@ -51,7 +51,7 @@ const createForm = (project) => {
     let labelDue = document.createElement('label');
     let dueInput = document.createElement('input');
     dueInput.setAttribute('id', 'due');
-    dueInput.setAttribute('type', 'text');
+    dueInput.setAttribute('type', 'date');
     labelDue.setAttribute('for', 'due');
     labelDue.textContent = "Due Date: ";
     dueDiv.appendChild(labelDue);

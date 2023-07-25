@@ -18,6 +18,7 @@ const addItemButton = (project) => {
     return itemButton;
 
 };
+
 const clearItems = (project) => {
 
     if(project.querySelector('.items-list') != null){
@@ -48,8 +49,6 @@ const createItemsDiv = () => {
 
 const createItemCard = (lastIndex) =>  {
 
-    //let lastIndex = itemList.length - 1;
-
     const itemCard = document.createElement('div');
     
     const itemDiv0 = document.createElement('div');
@@ -57,15 +56,21 @@ const createItemCard = (lastIndex) =>  {
     const itemDiv2 = document.createElement('div');
     const itemDiv3 = document.createElement('div');
 
+    itemDiv0.classList.add('title-itemcard');
+    itemDiv1.classList.add('desc-itemcard');
+    itemDiv2.classList.add('due-itemcard');
+    itemDiv3.classList.add('order-itemcard');
+
+
     itemDiv0.textContent = itemList[lastIndex].title.value;
     itemDiv1.textContent = itemList[lastIndex].description.value;
     itemDiv2.textContent = itemList[lastIndex].dueDate.value;
     itemDiv3.textContent = itemList[lastIndex].priority.value;
 
-    itemDiv0.appendChild(addEditButton(itemDiv0));
-    itemDiv1.appendChild(addEditButton(itemDiv1));
-    itemDiv2.appendChild(addEditButton(itemDiv2));
-    itemDiv3.appendChild(addEditButton(itemDiv3));
+    itemDiv0.appendChild(addEditButton(itemDiv0, lastIndex));
+    itemDiv1.appendChild(addEditButton(itemDiv1, lastIndex));
+    itemDiv2.appendChild(addEditButton(itemDiv2, lastIndex));
+    itemDiv3.appendChild(addEditButton(itemDiv3, lastIndex));
 
 
     itemCard.appendChild(itemDiv0);
