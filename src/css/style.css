@@ -47,3 +47,13 @@
     width: 3px;
 
 }
+
+
+input[type=checkbox]:checked ~ div{
+
+    text-decoration: line-through;
+
+}
+
+
+

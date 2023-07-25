@@ -80,7 +80,7 @@ const createForm = (project) => {
     
     inputForm.addEventListener('submit', (event) => {
      
-        event.preventDefault(); //Stop Form Submission
+        event.preventDefault(); 
         itemList.push(itemFactory(titleInput, descInput, dueInput, priorityInput));
         project.removeChild(inputForm);
         clearItems(project);

@@ -2,6 +2,7 @@ import { placeItem } from "./inputForm";
 import { addEditButton } from "./edit";
 import { adjustItemOrder } from "./priority";
 
+
 const itemList = [];
 
 const addItemButton = (project) => {
@@ -50,6 +51,11 @@ const createItemsDiv = () => {
 const createItemCard = (lastIndex) =>  {
 
     const itemCard = document.createElement('div');
+    itemCard.classList.add('item-card');
+
+    const itemCheck = document.createElement('input');
+    itemCheck.setAttribute('id', 'item-check');
+    itemCheck.setAttribute('type', 'checkbox');
     
     const itemDiv0 = document.createElement('div');
     const itemDiv1 = document.createElement('div');
@@ -61,27 +67,33 @@ const createItemCard = (lastIndex) =>  {
     itemDiv2.classList.add('due-itemcard');
     itemDiv3.classList.add('order-itemcard');
 
-
     itemDiv0.textContent = itemList[lastIndex].title.value;
     itemDiv1.textContent = itemList[lastIndex].description.value;
     itemDiv2.textContent = itemList[lastIndex].dueDate.value;
     itemDiv3.textContent = itemList[lastIndex].priority.value;
-
+    
     itemDiv0.appendChild(addEditButton(itemDiv0, lastIndex));
     itemDiv1.appendChild(addEditButton(itemDiv1, lastIndex));
     itemDiv2.appendChild(addEditButton(itemDiv2, lastIndex));
     itemDiv3.appendChild(addEditButton(itemDiv3, lastIndex));
 
-
+    itemCard.appendChild(itemCheck);
     itemCard.appendChild(itemDiv0);
     itemCard.appendChild(itemDiv1);
     itemCard.appendChild(itemDiv2);
     itemCard.appendChild(itemDiv3);
-    
 
     return itemCard;
     
 };
+
+
+
+    
+
+
+
+
 
 
 export {addItemButton, itemList, createItemsDiv, createItemCard, clearItems};
