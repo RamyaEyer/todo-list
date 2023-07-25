@@ -1,7 +1,4 @@
-import { itemList } from "./items";
-
-
-const adjustItemOrder = () => {
+const adjustItemOrder = (itemList) => {
 
     const newIndex = itemList.length - 1;
 

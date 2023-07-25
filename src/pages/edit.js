@@ -1,6 +1,3 @@
-import { adjustItemOrder } from "./priority";
-import { itemList } from "./items";
-
 const addEditButton = (textDiv, theIndex) => {
 
     const editButton = document.createElement('button');
@@ -8,7 +5,7 @@ const addEditButton = (textDiv, theIndex) => {
     
     editButton.addEventListener('click', () => {
 
-       editText(textDiv, theIndex);
+       editText(itemList, textDiv, theIndex);
 
     });
 
@@ -19,7 +16,7 @@ const addEditButton = (textDiv, theIndex) => {
 };
 
 
-const editText = (textDiv, theIndex) => {
+const editText = (itemList, textDiv, theIndex) => {
 
     const editForm = document.createElement('form');
     const editDiv = document.createElement('div');
@@ -59,7 +56,7 @@ const editText = (textDiv, theIndex) => {
         event.preventDefault();
         textDiv.removeChild(editForm);
         textDiv.textContent = editInput.value;
-        editItemList(textDiv, theIndex, editInput.value);
+        editItemList(itemList, textDiv, theIndex, editInput.value);
         textDiv.appendChild(addEditButton(textDiv, theIndex));
         
     });
@@ -69,7 +66,7 @@ const editText = (textDiv, theIndex) => {
 
 };
 
-const editItemList = (textDiv, theIndex, property) =>{
+const editItemList = (itemList, textDiv, theIndex, property) =>{
 
     if(textDiv.className === 'title-itemcard'){
 

@@ -1,4 +1,4 @@
-import { itemList, createItemCard, createItemsDiv, clearItems} from "./items"; 
+import { createItemCard, createItemsDiv, clearItems} from "./items"; 
 
 const itemFactory = (title, description, dueDate, priority) => {
 
@@ -6,19 +6,10 @@ const itemFactory = (title, description, dueDate, priority) => {
 
 };
 
-const placeItem = (project) => {
-
-    let formDiv = document.createElement('div');
-    project.appendChild(createForm(project));
-
-
-};
-
-const createForm = (project) => {
+const createForm = (itemList, project) => {
 
     let inputForm = document.createElement('form');
     inputForm.setAttribute('id','item-entry');
-
 
     let titleDiv = document.createElement('div');
     titleDiv.classList.add('section-div');
@@ -84,7 +75,7 @@ const createForm = (project) => {
         itemList.push(itemFactory(titleInput, descInput, dueInput, priorityInput));
         project.removeChild(inputForm);
         clearItems(project);
-        project.appendChild(createItemsDiv());
+        project.appendChild(createItemsDiv(itemList, project));
 
     });
 
@@ -97,4 +88,4 @@ const createForm = (project) => {
 
 
 
-export { placeItem };
+export { createForm };

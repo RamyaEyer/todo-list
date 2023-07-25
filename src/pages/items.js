@@ -1,45 +1,18 @@
-import { placeItem } from "./inputForm";
+import { createForm} from "./inputForm";
 import { addEditButton } from "./edit";
 import { adjustItemOrder } from "./priority";
 
 
-const itemList = [];
-
-const addItemButton = (project) => {
-
-    const itemButton = document.createElement('button');
-    itemButton.classList.add('add-item');
-    itemButton.textContent = "+";
-    itemButton.addEventListener("click", () => {
-
-        placeItem(project);
-     
-    });
-
-    return itemButton;
-
-};
-
-const clearItems = (project) => {
-
-    if(project.querySelector('.items-list') != null){
-
-        project.removeChild(project.querySelector('.items-list'));
-
-    }
-   
-};
-
-const createItemsDiv = () => {
+const createItemsDiv = (itemList, project) => {
 
     const itemsDiv = document.createElement('div');
     itemsDiv.classList.add('items-list');
 
-    adjustItemOrder();
+    adjustItemOrder(itemList);
 
     for(let i = 0; i < itemList.length; i++){
 
-        itemsDiv.appendChild(createItemCard(i));
+        itemsDiv.appendChild(createItemCard(itemsDiv,itemList, i));
 
     }
 
@@ -48,7 +21,8 @@ const createItemsDiv = () => {
 
 };
 
-const createItemCard = (lastIndex) =>  {
+
+const createItemCard = (itemsDiv, itemList, lastIndex) =>  {
 
     const itemCard = document.createElement('div');
     itemCard.classList.add('item-card');
@@ -82,18 +56,56 @@ const createItemCard = (lastIndex) =>  {
     itemCard.appendChild(itemDiv1);
     itemCard.appendChild(itemDiv2);
     itemCard.appendChild(itemDiv3);
+    itemCard.appendChild(removeItemButton(itemsDiv, itemList, lastIndex));
 
     return itemCard;
     
 };
 
 
+const addItemButton = (itemList, project) => {
 
+    const addItem = document.createElement('button');
+    addItem.classList.add('add-item');
+    addItem.textContent = "+";
+    addItem.addEventListener("click", () => {
+
+        let formDiv = document.createElement('div');
+        project.appendChild(createForm(itemList, project));
     
+     
+    });
+
+    return addItem;
+
+};
+
+const removeItemButton = (itemsDiv, itemList, lastIndex) =>{
+
+    const removeItem = document.createElement('button');
+    removeItem.classList.add('add-item');
+    removeItem.textContent = "-";
+    removeItem.addEventListener("click", () => {
+
+        itemsDiv.removeChild(itemsDiv.children[lastIndex]);
+     
+    });
+
+    return removeItem;
 
 
+};
 
 
+const clearItems = (project) => {
+
+    if(project.querySelector('.items-list') != null){
+
+        project.removeChild(project.querySelector('.items-list'));
+
+    }
+   
+};
 
 
-export {addItemButton, itemList, createItemsDiv, createItemCard, clearItems};
+export {addItemButton, createItemsDiv, createItemCard, clearItems};

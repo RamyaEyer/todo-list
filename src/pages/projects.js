@@ -45,9 +45,10 @@ const createProject = () => {
     projectTitle.textContent = "Project";
     projectTitle.appendChild(addEditButton(projectTitle));
 
+    const itemList = [];
 
     project.appendChild(projectTitle);
-    project.appendChild(addItemButton(project));
+    project.appendChild(addItemButton(itemList, project));
     projectDivs.appendChild(project);
     content.appendChild(projectDivs);
 
