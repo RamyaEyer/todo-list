@@ -1,6 +1,6 @@
 import { addItemButton } from "./items";
 import { placeItem } from "./inputForm";
-import { addEditButton, editText} from "./edit";
+import { addEditButton, editText, editTitleButton, editTitle} from "./edit";
 
 const content = document.getElementsByTagName("content");
 
@@ -10,7 +10,7 @@ const addTitle = () => {
     const mainTitle = document.createElement('div');
     mainTitle.classList.add('main-title');
     mainTitle.textContent = 'To-Do List';
-    mainTitle.appendChild(addEditButton(mainTitle));
+    mainTitle.appendChild(editTitleButton(mainTitle));
     content.appendChild(mainTitle);
 
 };
@@ -25,6 +25,7 @@ const addProjectButton = () =>{
     content.appendChild(projectButton);
 
 };
+
 
 const createProjectsDiv = () => {
 
@@ -42,8 +43,9 @@ const createProject = () => {
     project.classList.add('project');
 
     const projectTitle = document.createElement('div');
+    projectTitle.classList.add("project-title");
     projectTitle.textContent = "Project";
-    projectTitle.appendChild(addEditButton(projectTitle));
+    projectTitle.appendChild(editTitleButton(projectTitle));
 
     const itemList = [];
 

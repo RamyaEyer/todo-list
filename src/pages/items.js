@@ -2,7 +2,6 @@ import { createForm} from "./inputForm";
 import { addEditButton } from "./edit";
 import { adjustItemOrder } from "./priority";
 
-
 const createItemsDiv = (itemList, project) => {
 
     const itemsDiv = document.createElement('div');
@@ -42,14 +41,14 @@ const createItemCard = (itemsDiv, itemList, lastIndex) =>  {
     itemDiv3.classList.add('order-itemcard');
 
     itemDiv0.textContent = itemList[lastIndex].title.value;
-    itemDiv1.textContent = itemList[lastIndex].description.value;
-    itemDiv2.textContent = itemList[lastIndex].dueDate.value;
+    itemDiv1.textContent = "Description: " + itemList[lastIndex].description.value;
+    itemDiv2.textContent = "Due Date: " + itemList[lastIndex].dueDate.value;
     itemDiv3.textContent = itemList[lastIndex].priority.value;
     
-    itemDiv0.appendChild(addEditButton(itemDiv0, lastIndex));
-    itemDiv1.appendChild(addEditButton(itemDiv1, lastIndex));
-    itemDiv2.appendChild(addEditButton(itemDiv2, lastIndex));
-    itemDiv3.appendChild(addEditButton(itemDiv3, lastIndex));
+    itemDiv0.appendChild(addEditButton(itemList, itemDiv0, lastIndex));
+    itemDiv1.appendChild(addEditButton(itemList, itemDiv1, lastIndex));
+    itemDiv2.appendChild(addEditButton(itemList, itemDiv2, lastIndex));
+    itemDiv3.appendChild(addEditButton(itemList, itemDiv3, lastIndex));
 
     itemCard.appendChild(itemCheck);
     itemCard.appendChild(itemDiv0);
@@ -83,7 +82,7 @@ const addItemButton = (itemList, project) => {
 const removeItemButton = (itemsDiv, itemList, lastIndex) =>{
 
     const removeItem = document.createElement('button');
-    removeItem.classList.add('add-item');
+    removeItem.classList.add('remove-item');
     removeItem.textContent = "-";
     removeItem.addEventListener("click", () => {
 

@@ -1,6 +1,9 @@
-const addEditButton = (textDiv, theIndex) => {
+const addEditButton = (itemList, textDiv, theIndex) => {
 
     const editButton = document.createElement('button');
+
+    /*const editButton = new Image();
+    editButton.src = editIcon;*/
     editButton.classList.add('edit-button');
     
     editButton.addEventListener('click', () => {
@@ -14,6 +17,56 @@ const addEditButton = (textDiv, theIndex) => {
     return editButton;
 
 };
+
+
+
+const editTitleButton = (textDiv) => {
+
+    const editButton = document.createElement('button');
+    editButton.classList.add('edit-button');
+    
+    editButton.addEventListener('click', () => {
+
+       editTitle(textDiv);
+
+    });
+
+    return editButton;
+
+};
+
+const editTitle = (textDiv) => {
+
+    const editForm = document.createElement('form');
+    const editDiv = document.createElement('div');
+    const editInput = document.createElement('input');
+    editInput.setAttribute('id', 'edit-input');
+    editInput.setAttribute('type', 'text');
+
+    editDiv.appendChild(editInput);
+    editForm.appendChild(editDiv);
+
+    const editSubmit = document.createElement('input');
+    editSubmit.setAttribute('id', 'edit-submit');
+    editSubmit.setAttribute('type', 'submit');
+    editSubmit.setAttribute('value', 'Edit');
+    editForm.appendChild(editSubmit);
+
+    editForm.addEventListener('submit', (event) => {
+
+        event.preventDefault();
+        textDiv.removeChild(editForm);
+        textDiv.textContent = editInput.value;
+        textDiv.appendChild(editTitleButton(textDiv));
+        
+    });
+    
+
+    textDiv.appendChild(editForm);
+
+
+};
+
 
 
 const editText = (itemList, textDiv, theIndex) => {
@@ -57,7 +110,7 @@ const editText = (itemList, textDiv, theIndex) => {
         textDiv.removeChild(editForm);
         textDiv.textContent = editInput.value;
         editItemList(itemList, textDiv, theIndex, editInput.value);
-        textDiv.appendChild(addEditButton(textDiv, theIndex));
+        textDiv.appendChild(addEditButton(itemList, textDiv, theIndex));
         
     });
     
@@ -95,4 +148,4 @@ const editItemList = (itemList, textDiv, theIndex, property) =>{
 };
 
 
-export {addEditButton, editText};
+export {addEditButton, editText, editTitleButton, editTitle};

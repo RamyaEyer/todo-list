@@ -17,6 +17,8 @@ const createForm = (itemList, project) => {
     let titleInput = document.createElement('input');
     titleInput.setAttribute('id', 'title');
     titleInput.setAttribute('type', 'text');
+    titleInput.required = true;
+    
     labelTitle.setAttribute('for', 'title');
     labelTitle.textContent = "Title: ";
     titleDiv.appendChild(labelTitle);
@@ -30,6 +32,8 @@ const createForm = (itemList, project) => {
     let descInput = document.createElement('input');
     descInput.setAttribute('id', 'desc');
     descInput.setAttribute('type', 'text');
+    descInput.required = true;
+
     labelDesc.setAttribute('for', 'desc');
     labelDesc.textContent = "Description: ";
     descDiv.appendChild(labelDesc);
@@ -43,6 +47,8 @@ const createForm = (itemList, project) => {
     let dueInput = document.createElement('input');
     dueInput.setAttribute('id', 'due');
     dueInput.setAttribute('type', 'date');
+    dueInput.required = true;
+
     labelDue.setAttribute('for', 'due');
     labelDue.textContent = "Due Date: ";
     dueDiv.appendChild(labelDue);
@@ -58,9 +64,10 @@ const createForm = (itemList, project) => {
     priorityInput.setAttribute('type', 'number');
     priorityInput.min = 1;
     priorityInput.step = 1;
+    priorityInput.required = true;
 
     labelPriority.setAttribute('for', 'priority');
-    labelPriority.textContent = "Priority";
+    labelPriority.textContent = "Priority: ";
     posDiv.appendChild(labelPriority);
     posDiv.appendChild(priorityInput);
     inputForm.appendChild(posDiv);

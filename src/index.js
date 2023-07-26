@@ -11,7 +11,7 @@ const projectButton = document.querySelector('.add-project');
 projectButton.addEventListener("click", () => {
 
     createProject();
- 
+
 });
 
 
