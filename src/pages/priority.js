@@ -1,3 +1,9 @@
+/* priority.js
+
+    Implementation of priority queue for automatically sorting items in each project.
+
+*/
+
 const adjustItemOrder = (itemList) => {
 
     const newIndex = itemList.length - 1;

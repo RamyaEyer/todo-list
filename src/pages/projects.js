@@ -1,8 +1,20 @@
+/* projects.js
+
+Contains functions that handle creation of initial To-Do List and projects
+
+*/
+
 import { addItemButton } from "./items";
 import { placeItem } from "./inputForm";
 import { addEditButton, editText, editTitleButton, editTitle} from "./edit";
 
 const content = document.getElementsByTagName("content");
+
+/* addTitle()
+
+Adds main title ('To Do List') to the title screen.
+
+*/
 
 const addTitle = () => {
 
@@ -15,6 +27,11 @@ const addTitle = () => {
 
 };
 
+/* addProjectButton()
+
+Adds Project Button (visual only) to the initial display
+
+*/
 
 const addProjectButton = () =>{
 
@@ -26,6 +43,11 @@ const addProjectButton = () =>{
 
 };
 
+/* createProjectsDiv()
+
+Creates/initializes container for projects to be added to To-Do List
+
+*/
 
 const createProjectsDiv = () => {
 
@@ -34,6 +56,19 @@ const createProjectsDiv = () => {
     projectDivs.classList.add('projects');
     content.appendChild(projectDivs);
 };
+
+/* createProject()
+ 
+    Initializes creation of project.
+
+    Features project title that can be edited with a button.
+
+    Initializes item list (can be seem as a task list).
+
+    Allows for item to be added to project one at a time.
+
+
+ */
 
 const createProject = () => {
 

@@ -2,6 +2,12 @@ import { createForm} from "./inputForm";
 import { addEditButton } from "./edit";
 import { adjustItemOrder } from "./priority";
 
+
+/* createItemsDiv(itemList, project)
+
+    Creates div container for item to be created and added to list of items.
+
+*/
 const createItemsDiv = (itemList, project) => {
 
     const itemsDiv = document.createElement('div');
@@ -19,6 +25,12 @@ const createItemsDiv = (itemList, project) => {
 
 
 };
+
+/* createItemCard(itemsDiv, itemList, lastIndex) 
+
+    Creates display for item and properties on list
+
+*/
 
 
 const createItemCard = (itemsDiv, itemList, lastIndex) =>  {
@@ -61,6 +73,13 @@ const createItemCard = (itemsDiv, itemList, lastIndex) =>  {
     
 };
 
+/*
+
+addItemButton(itemList, project)
+
+Creates Add Item Button + Enables Function
+
+*/
 
 const addItemButton = (itemList, project) => {
 
@@ -79,6 +98,13 @@ const addItemButton = (itemList, project) => {
 
 };
 
+/*
+   removeItemButton(itemsDiv, itemList, lastIndex)
+
+   Allows removal of previously added item button.
+
+*/
+
 const removeItemButton = (itemsDiv, itemList, lastIndex) =>{
 
     const removeItem = document.createElement('button');
@@ -94,6 +120,12 @@ const removeItemButton = (itemsDiv, itemList, lastIndex) =>{
 
 
 };
+
+/* clearItems(project)
+
+    Clears all added items in project.
+
+*/
 
 
 const clearItems = (project) => {

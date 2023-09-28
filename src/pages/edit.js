@@ -1,9 +1,13 @@
+/* addEditButton(itemList, textDiv, theIndex)
+
+    Creates visible and usable button for editing text related to items.
+
+*/
+
 const addEditButton = (itemList, textDiv, theIndex) => {
 
     const editButton = document.createElement('button');
-
-    /*const editButton = new Image();
-    editButton.src = editIcon;*/
+    
     editButton.classList.add('edit-button');
     
     editButton.addEventListener('click', () => {
@@ -18,6 +22,11 @@ const addEditButton = (itemList, textDiv, theIndex) => {
 
 };
 
+/* editButton(textDiv)
+
+    Creates visible and usable button for editing text related to titles as opposed to items.
+
+*/
 
 
 const editTitleButton = (textDiv) => {
@@ -34,6 +43,12 @@ const editTitleButton = (textDiv) => {
     return editButton;
 
 };
+
+/* editTitle(textDiv)
+
+    Creates input field for title to be edited and submitted.
+
+*/
 
 const editTitle = (textDiv) => {
 
@@ -66,6 +81,12 @@ const editTitle = (textDiv) => {
 
 
 };
+
+/* editText(itemList, textDiv, theIndex)
+
+     Creates input field for text related to item to be edited and submitted.
+
+*/
 
 
 
@@ -118,6 +139,12 @@ const editText = (itemList, textDiv, theIndex) => {
     textDiv.appendChild(editForm);
 
 };
+
+/* editItemList(itemList, textDiv, theIndex, property)
+
+    Allows for specified item property to be changed and updated.
+
+*/
 
 const editItemList = (itemList, textDiv, theIndex, property) =>{
 

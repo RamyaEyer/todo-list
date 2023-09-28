@@ -6,6 +6,13 @@ const itemFactory = (title, description, dueDate, priority) => {
 
 };
 
+/*
+  createForm(itemList, project)
+
+    Creates input form for items to be added to project and adds to item list.
+
+*/
+
 const createForm = (itemList, project) => {
 
     let inputForm = document.createElement('form');

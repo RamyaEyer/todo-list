@@ -50,7 +50,9 @@
 
     display: flex;
     flex-direction: column;
-    background-color: #A6E3E7;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: #303633;
     padding-bottom: 2%;
 
 }
@@ -64,7 +66,6 @@
     text-align: center;
     font-size: 18px;
     padding: 2%;
-    border-radius: 5%;
 
 }
 
@@ -122,16 +123,19 @@
 
 .item-card{
 
-    height: auto;
-    width: auto;
+    display:  flex;
+    flex-direction: column;
+    align-self: center;
+    row-gap: 5px;
+    width: 50%;
+    padding: 5%;
     background-color: #303633;
     border-color:#d3ffe9;
     color: #d3ffe9;
-    padding: 5%;
-    margin: 2%;
     overflow: auto;
     border-radius: 5%;
-    
+    margin-left: 20%;
+    margin-bottom: 5%;
 
 }
 
